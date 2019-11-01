@@ -14,8 +14,7 @@ steps:
     npm install -g @angular/cli
     npm install
     ng build --prod
-    cd elastic-beanstalk
-    zip -r output.zip ./*
+    zip output.zip -r * .[^.]*
   displayName: 'install, build and zip'
 
 - task: S3Upload@1
